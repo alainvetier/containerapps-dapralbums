@@ -1,11 +1,6 @@
 {
   "name": "Azure Developer CLI",
-  "build": {
-      "dockerfile": "Dockerfile",
-      "args": {
-          "VARIANT": "bullseye"
-      }
-  },
+  "image": "mcr.microsoft.com/vscode/devcontainers/dotnet:dev-7.0-bullseye",
   "features": {
        // install azure cli    
       "ghcr.io/devcontainers/features/azure-cli:1": {
@@ -31,7 +26,13 @@
       },
       // install dapr cli
       "ghcr.io/dapr/cli/dapr-cli:0": {
-      }
+      },
+      // install azd cli
+      "ghcr.io/azure/azure-dev/azd:0": {
+      },
+      // install minikube,helm and kubectl
+      "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+    }
   },
   "customizations": {
     "vscode": {  
