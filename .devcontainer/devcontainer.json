@@ -7,33 +7,47 @@
       }
   },
   "features": {
+       // install azure cli    
       "ghcr.io/devcontainers/features/azure-cli:1": {
           "version": "2.38"
       },
-      "ghcr.io/devcontainers/features/docker-from-docker:1": {
-          "version": "20.10"
+      // Enable Docker in Docker (best option when using devcontainer in WSL2)
+      "ghcr.io/devcontainers/features/docker-in-docker:2": {
       },
+      // Alternatively, use Docker-outside-of-Docker (uses Docker in the host)
+      //"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},      
+      // install dotnet
       "ghcr.io/devcontainers/features/dotnet:1": {
           "version": "6.0"
       },
+      // install github cli
       "ghcr.io/devcontainers/features/github-cli:1": {
           "version": "2"
       },
+      // install node
       "ghcr.io/devcontainers/features/node:1": {
           "version": "16",
           "nodeGypDependencies": false
+      },
+      // install dapr cli
+      "ghcr.io/dapr/cli/dapr-cli:0": {
       }
   },
-  "extensions": [
-      "ms-azuretools.azure-dev",
-      "ms-azuretools.vscode-bicep",
-      "ms-azuretools.vscode-docker",
-      "ms-vscode.vscode-node-azure-pack",
-      "ms-dotnettools.csharp",
-      "ms-dotnettools.vscode-dotnet-runtime",
-      "ms-azuretools.vscode-dapr",
-      "GitHub.copilot"
-  ],
+  "customizations": {
+    "vscode": {  
+            "extensions": [
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.vscode-node-azure-pack",
+                "ms-dotnettools.csharp",
+                "ms-dotnettools.vscode-dotnet-runtime",
+                "ms-azuretools.vscode-dapr",
+                "GitHub.copilot",
+                "GitHub.copilot-chat"
+            ]
+        }
+    },
   "forwardPorts": [
       3000,
       3100,

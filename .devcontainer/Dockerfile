@@ -21,9 +21,5 @@ RUN MINIKUBE_URL="https://storage.googleapis.com/minikube/releases/latest/miniku
     && MINIKUBE_SHA256=$(curl -sSL "${MINIKUBE_URL}.sha256") \
     && echo "${MINIKUBE_SHA256} */usr/local/bin/minikube" | sha256sum -c -
 
-
-# Install Dapr CLI
-RUN wget -q https://raw.githubusercontent.com/dapr/cli/master/install/install.sh -O - | /bin/bash
-
 # Install Azure Dev CLI
 RUN curl -fsSL https://aka.ms/install-azd.sh | bash
